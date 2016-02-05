@@ -1,7 +1,7 @@
 #!/bin/bash -e
 # build script for fitsio
 . /etc/profile.d/modules.sh
-SOURCE_FILE=${NAME}${VERSION}tar.gz
+SOURCE_FILE=${NAME}${VERSION}.tar.gz
 
 # We provide the base module which all jobs need to get their environment on the build slaves
 module load ci
