@@ -4,7 +4,6 @@
 module add deploy
 module add bzip2
 
-
 # We will be running configure and make in this directory
 cd $WORKSPACE/$NAME
 make distclean
