@@ -47,7 +47,7 @@ cd $WORKSPACE/$NAME
 --enable-sse2 \
 --enable-reentrant \
 --prefix=${SOFT_DIR} \
---with-bzip2=${BZLIB_DIR}
+--with-bzip2=${BZLIB_DIR}/include 
 
 
 # The build nodes have 8 core jobs. jobs are blocking, which means you can build with at least 8 core parallelism.
