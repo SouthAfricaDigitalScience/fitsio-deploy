@@ -1,7 +1,7 @@
 #!/bin/bash -e
 # FITSIO check-build script
 . /etc/profile.d/modules.sh
-module load ci
+module add ci
 module add bzip2
 echo ""
 cd ${WORKSPACE}/${NAME}

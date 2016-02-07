@@ -6,7 +6,7 @@ module add bzip2
 
 
 # We will be running configure and make in this directory
-cd $WORKSPACE/$NAME$VERSION/
+cd $WORKSPACE/$NAME
 make distclean
 
 # Note that $SOFT_DIR is used as the target installation directory.
@@ -14,7 +14,7 @@ make distclean
 --enable-sse2 \
 --enable-reentrant \
 --prefix=${SOFT_DIR} \
---with-bzip2=${BZLIB_DIR}
+--with-bzip2=${BZLIB_DIR}/include
 
 
 make install
