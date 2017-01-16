@@ -4,7 +4,7 @@
 SOURCE_FILE=${NAME}${VERSION}.tar.gz
 
 # We provide the base module which all jobs need to get their environment on the build slaves
-module load ci
+module add ci
 module add bzip2
 
 
@@ -47,9 +47,10 @@ cd $WORKSPACE/$NAME
 --enable-sse2 \
 --enable-reentrant \
 --prefix=${SOFT_DIR} \
---with-bzip2=${BZLIB_DIR}/include 
+--with-bzip2=${BZLIB_DIR}/include
 
 
 # The build nodes have 8 core jobs. jobs are blocking, which means you can build with at least 8 core parallelism.
 # this might cause instability in the builds, so it's up to you.
 make
+make shared

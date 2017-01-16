@@ -7,8 +7,6 @@ echo ""
 cd ${WORKSPACE}/${NAME}
 # disabling make check since this puts a huge load on the machines
 # see http://stackoverflow.com/questions/23734729/open-mpi-virtual-timer-expired
-make testprog
-./testprog
 echo $?
 
 make install
@@ -28,7 +26,7 @@ module add bzip2
 
 module-whatis   "$NAME $VERSION."
 setenv       CFITSIO_VERSION       $VERSION
-setenv       CFITSIO_DIR      /apprepo/$::env(SITE)/$::env(OS)/$::env(ARCH)/${NAME}/${VERSION}
+setenv       CFITSIO_DIR      /data/ci-build/$::env(SITE)/$::env(OS)/$::env(ARCH)/${NAME}/${VERSION}
 prepend-path LD_LIBRARY_PATH   $::env(CFITSIO_DIR)/lib
 prepend-path CFITSIO_INCLUDE_DIR   $::env(CFITSIO_DIR)/include
 prepend-path PATH              $::env(CFITSIO_DIR)/bin
@@ -41,3 +39,5 @@ cp modules/${VERSION} ${ASTRO_MODULES}/${NAME}
 
 module avail
 module add ${NAME}/${VERSION}
+make testprog
+./testprog

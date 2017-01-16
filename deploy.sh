@@ -17,6 +17,8 @@ make distclean
 
 
 make install
+make shared
+make install 
 mkdir -p modules
 (
 cat <<MODULE_FILE
