@@ -44,9 +44,9 @@ cd $WORKSPACE/$NAME
 # Note that $SOFT_DIR is used as the target installation directory.
 ./configure \
 --enable-sse2 \
---enable-reentrant \
+--enable-ssse3 \
 --prefix=${SOFT_DIR} \
---with-bzip2=${BZLIB_DIR}/include
+--with-bzip2=${BZLIB_DIR}
 
 
 # The build nodes have 8 core jobs. jobs are blocking, which means you can build with at least 8 core parallelism.

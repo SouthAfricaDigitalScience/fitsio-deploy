@@ -11,14 +11,14 @@ make distclean
 # Note that $SOFT_DIR is used as the target installation directory.
 ./configure \
 --enable-sse2 \
---enable-reentrant \
+--enable-ssse3 \
+--with-bzip2=${BZLIB_DIR} \
 --prefix=${SOFT_DIR} \
---with-bzip2=${BZLIB_DIR}/include
-
 
 make install
 make shared
-make install 
+make install
+
 mkdir -p modules
 (
 cat <<MODULE_FILE
