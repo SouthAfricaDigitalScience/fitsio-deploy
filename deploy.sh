@@ -43,3 +43,7 @@ MODULE_FILE
 
 mkdir -p ${ASTRO_MODULES}/${NAME}
 cp modules/${VERSION} ${ASTRO_MODULES}/${NAME}
+
+module avail ${NAME}
+
+module add ${NAME}/${VERSION}
