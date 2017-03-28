@@ -38,6 +38,6 @@ mkdir -p ${ASTRO_MODULES}/${NAME}
 cp modules/${VERSION} ${ASTRO_MODULES}/${NAME}
 
 module avail
-module add ${NAME}/${VERSION}
+module add ${ASTRO_MODULES}/${NAME}/${VERSION}
 make testprog
 ./testprog
