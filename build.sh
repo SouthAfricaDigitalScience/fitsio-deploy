@@ -6,8 +6,8 @@ SOURCE_FILE=${NAME}${VERSION}.tar.gz
 # We provide the base module which all jobs need to get their environment on the build slaves
 module add ci
 module add bzip2
-
-
+bziplocation=`which bzip2`
+echo "which bzip is ${bziplocation}"
 # Workspace is the "home" directory of jenkins into which the project itself will be created and built.
 mkdir -p $WORKSPACE
 # SRC_DIR is the local directory to which all of the source code tarballs are downloaded. We cache them locally.
