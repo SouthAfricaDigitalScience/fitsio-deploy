@@ -3,7 +3,7 @@
 . /etc/profile.d/modules.sh
 module add ci
 module add bzip2
-make utils
+make testprog
 ./testprog
 
 echo ""
