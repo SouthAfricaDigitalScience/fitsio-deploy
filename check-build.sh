@@ -3,11 +3,12 @@
 . /etc/profile.d/modules.sh
 module add ci
 module add bzip2
-make testprog
-./testprog
+
 
 echo ""
 cd ${WORKSPACE}/${NAME}
+make testprog
+./testprog
 # disabling make check since this puts a huge load on the machines
 # see http://stackoverflow.com/questions/23734729/open-mpi-virtual-timer-expired
 echo $?
