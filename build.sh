@@ -51,3 +51,7 @@ cd $WORKSPACE/$NAME
 
 make
 make shared
+echo "is the statically-linked library present ?"
+find . -name "*.a"
+echo  "is the dynamically-linked library present ?"
+find . -name "*.so*"
