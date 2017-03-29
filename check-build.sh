@@ -3,6 +3,9 @@
 . /etc/profile.d/modules.sh
 module add ci
 module add bzip2
+make utils
+./testprog
+
 echo ""
 cd ${WORKSPACE}/${NAME}
 # disabling make check since this puts a huge load on the machines
@@ -36,8 +39,9 @@ MODULE_FILE
 
 mkdir -p ${ASTRO_MODULES}/${NAME}
 cp modules/${VERSION} ${ASTRO_MODULES}/${NAME}
-
-module avail
+module avail ${NAME}
 module add ${NAME}/${VERSION}
-make testprog
-./testprog
+
+echo "checking the installed version"
+which testprog
+testprog
