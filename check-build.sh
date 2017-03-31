@@ -34,10 +34,10 @@ prepend-path CPATH             $::env(CFITSIO_DIR)/include
 MODULE_FILE
 ) > modules/${VERSION}
 
-mkdir -p ${ASTRO_MODULES}/${NAME}
+mkdir -p astronomy/${NAME}
 cp modules/${VERSION} ${ASTRO_MODULES}/${NAME}
 
 module avail
-module add ${ASTRO_MODULES}/${NAME}/${VERSION}
+module add astronomy/${NAME}/${VERSION}
 make testprog
 ./testprog
