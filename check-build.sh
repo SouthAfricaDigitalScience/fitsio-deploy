@@ -3,12 +3,11 @@
 . /etc/profile.d/modules.sh
 module add ci
 module add bzip2
+
 echo ""
 cd ${WORKSPACE}/${NAME}
-# disabling make check since this puts a huge load on the machines
-# see http://stackoverflow.com/questions/23734729/open-mpi-virtual-timer-expired
+make testprog
 echo $?
-
 make install
 
 mkdir -p modules
@@ -34,10 +33,11 @@ prepend-path CPATH             $::env(CFITSIO_DIR)/include
 MODULE_FILE
 ) > modules/${VERSION}
 
-mkdir -p astronomy/${NAME}
+mkdir -p ${ASTRO_MODULES}/${NAME}
 cp modules/${VERSION} ${ASTRO_MODULES}/${NAME}
+module avail ${NAME}
+module add ${NAME}/${VERSION}
 
-module avail
-module add astronomy/${NAME}/${VERSION}
-make testprog
-./testprog
+echo "checking the installed version"
+which testprog
+testprog
