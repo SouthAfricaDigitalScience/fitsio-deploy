@@ -13,6 +13,7 @@ make distclean
 --enable-sse2 \
 --enable-ssse3 \
 --with-bzip2=${BZLIB_DIR} \
+--enable-reentrant \
 --prefix=${SOFT_DIR} \
 
 make install

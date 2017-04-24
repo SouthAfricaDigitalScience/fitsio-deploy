@@ -46,10 +46,12 @@ cd $WORKSPACE/$NAME
 --enable-sse2 \
 --enable-ssse3 \
 --prefix=${SOFT_DIR} \
+--enable-reentrant \
 --with-bzip2=${BZLIB_DIR}
 
-
-# The build nodes have 8 core jobs. jobs are blocking, which means you can build with at least 8 core parallelism.
-# this might cause instability in the builds, so it's up to you.
 make
 make shared
+echo "is the statically-linked library present ?"
+find . -name "*.a"
+echo  "is the dynamically-linked library present ?"
+find . -name "*.so*"
