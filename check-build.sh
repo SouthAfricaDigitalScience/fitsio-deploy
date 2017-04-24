@@ -33,10 +33,11 @@ prepend-path CPATH             $::env(CFITSIO_DIR)/include
 MODULE_FILE
 ) > modules/${VERSION}
 
+echo "astromdules environment variable is : "${ASTROMODULES}
 mkdir -p ${ASTRO_MODULES}/${NAME}
 cp modules/${VERSION} ${ASTRO_MODULES}/${NAME}
 module avail ${NAME}
-module add ${NAME}/${VERSION}
+module add ${ASTRO_MODULES}/${NAME}/${VERSION}
 
 echo "checking the installed version"
 which testprog
