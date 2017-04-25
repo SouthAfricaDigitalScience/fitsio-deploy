@@ -6,9 +6,6 @@ module add bzip2
 
 echo ""
 cd ${WORKSPACE}/${NAME}
-./configure --with-bzip2=${BZIP2DIR}
-
-
 make testprog
 echo $?
 make install
