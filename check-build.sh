@@ -34,11 +34,15 @@ MODULE_FILE
 ) > modules/${VERSION}
 
 echo "astromdules environment variable is : "${ASTROMODULES}
-mkdir -p ${ASTRO_MODULES}/${NAME}
-cp modules/${VERSION} ${ASTRO_MODULES}/${NAME}
+echo $LD_LIBRARY_PATH
+mkdir -p astronomy/${NAME}
+cp modules/${VERSION} astronomy/${NAME}
 module avail ${NAME}
-module add ${ASTRO_MODULES}/${NAME}/${VERSION}
+module add astronomy/${NAME}/${VERSION}
 
 echo "checking the installed version"
-which testprog
-testprog
+echo "software directory where cfitsio is installed is :" ${SOFT_DIR} 
+cd ${SOFT_DIR}
+which ./testprog
+ldd ./testprog
+./testprog
