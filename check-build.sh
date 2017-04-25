@@ -41,8 +41,8 @@ module avail ${NAME}
 module add astronomy/${NAME}/${VERSION}
 
 echo "checking the installed version"
-echo "software directory where cfitsio is installed is :" ${SOFT_DIR} 
-cd ${SOFT_DIR}
-which ./testprog
-ldd ./testprog
-./testprog
+echo "test program should be sitting in " ${WORKSPACE}/${NAME} 
+ls ${WORKSPACE}/$NAME}
+which ${WORKSPACE}/{$NAME}/testprog
+ldd ${WORKSPACE}/{$NAME}/testprog
+${WORKSPACE}/{$NAME}/testprog
