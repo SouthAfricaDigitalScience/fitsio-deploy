@@ -50,11 +50,12 @@ MODULE_FILE
 ) > modules/${VERSION}
 
 echo "astromodules environment variable is : "${ASTRONOMY}
-echo "LD_LIBRARY_PATH is $LD_LIBRARY_PATH"
+
 mkdir -p ${ASTRONOMY}/${NAME}
 cp modules/${VERSION} ${ASTRONOMY}/${NAME}
 module avail ${NAME}
 module add ${NAME}/${VERSION}
+echo "LD_LIBRARY_PATH is $LD_LIBRARY_PATH"
 echo "checking where testprog is"
 which testprog
 ./testprog
