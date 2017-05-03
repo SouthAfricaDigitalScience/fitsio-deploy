@@ -1,4 +1,18 @@
 #!/bin/bash -e
+# Copyright 2016 C.S.I.R. Meraka Institute
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 # FITSIO check-build script
 . /etc/profile.d/modules.sh
 module add ci
@@ -33,16 +47,12 @@ prepend-path CPATH             $::env(CFITSIO_DIR)/include
 MODULE_FILE
 ) > modules/${VERSION}
 
-echo "astromdules environment variable is : "${ASTROMODULES}
+echo "astromodules environment variable is : "${ASTRO_MODULES}
 echo $LD_LIBRARY_PATH
-mkdir -p astronomy/${NAME}
-cp modules/${VERSION} astronomy/${NAME}
+mkdir -p ${ASTRO_MODULES}/${NAME}
+cp modules/${VERSION} ${ASTRO_MODULES}/${NAME}
 module avail ${NAME}
-module add astronomy/${NAME}/${VERSION}
-
-echo "checking the installed version"
-echo "test program should be sitting in " ${WORKSPACE}/${NAME} 
-ls ${WORKSPACE}/$NAME}
-which ${WORKSPACE}/{$NAME}/testprog
-ldd ${WORKSPACE}/{$NAME}/testprog
-${WORKSPACE}/{$NAME}/testprog
+module add ${NAME}/${VERSION}
+echo "checking where testprog is"
+which testprog
+testprog
