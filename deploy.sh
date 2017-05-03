@@ -33,7 +33,7 @@ make distclean
 make install
 make shared
 make install
-
+make testprog
 mkdir -p modules
 (
 cat <<MODULE_FILE
