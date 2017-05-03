@@ -56,8 +56,8 @@ prepend-path CPATH             $::env(CFITSIO_DIR)/include
 MODULE_FILE
 ) > modules/${VERSION}
 
-mkdir -p ${ASTRO_MODULES}/${NAME}
-cp modules/${VERSION} ${ASTRO_MODULES}/${NAME}
+mkdir -p ${ASTRONOMY}/${NAME}
+cp modules/${VERSION} ${ASTRONOMY}/${NAME}
 
 module avail ${NAME}
 

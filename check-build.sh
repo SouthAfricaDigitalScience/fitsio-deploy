@@ -49,8 +49,8 @@ MODULE_FILE
 
 echo "astromodules environment variable is : "${ASTRO_MODULES}
 echo $LD_LIBRARY_PATH
-mkdir -p ${ASTRO_MODULES}/${NAME}
-cp modules/${VERSION} ${ASTRO_MODULES}/${NAME}
+mkdir -p ${ASTRONOMY}/${NAME}
+cp modules/${VERSION} ${ASTRONOMY}/${NAME}
 module avail ${NAME}
 module add ${NAME}/${VERSION}
 echo "checking where testprog is"
