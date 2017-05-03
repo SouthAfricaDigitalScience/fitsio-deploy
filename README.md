@@ -8,7 +8,7 @@ Build, test and deploy scripts for [fitsio](http://heasarc.gsfc.nasa.gov/fitsio/
 
 Versions built :
 
-  1. 3370
+  1. 3390
   1. 3410
 
 # Dependencies
