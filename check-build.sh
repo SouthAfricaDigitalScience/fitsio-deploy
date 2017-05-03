@@ -40,19 +40,21 @@ module add bzip2
 module-whatis   "$NAME $VERSION."
 setenv       CFITSIO_VERSION       $VERSION
 setenv       CFITSIO_DIR      /data/ci-build/$::env(SITE)/$::env(OS)/$::env(ARCH)/${NAME}/${VERSION}
+
 prepend-path LD_LIBRARY_PATH   $::env(CFITSIO_DIR)/lib
 prepend-path CFITSIO_INCLUDE_DIR   $::env(CFITSIO_DIR)/include
 prepend-path PATH              $::env(CFITSIO_DIR)/bin
 prepend-path CPATH             $::env(CFITSIO_DIR)/include
+
 MODULE_FILE
 ) > modules/${VERSION}
 
-echo "astromodules environment variable is : "${ASTRO_MODULES}
-echo $LD_LIBRARY_PATH
+echo "astromodules environment variable is : "${ASTRONOMY}
+echo "LD_LIBRARY_PATH is $LD_LIBRARY_PATH"
 mkdir -p ${ASTRONOMY}/${NAME}
 cp modules/${VERSION} ${ASTRONOMY}/${NAME}
 module avail ${NAME}
 module add ${NAME}/${VERSION}
 echo "checking where testprog is"
 which testprog
-testprog
+./testprog
