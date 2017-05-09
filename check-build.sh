@@ -18,11 +18,13 @@
 module add ci
 module add bzip2
 
+echo "is libbz2 in our LD_LIBRARY_PATH"
+ldconfig -N -v $(sed 's/:/ /' <<< $LD_LIBRARY_PATH) | grep libbz2
 echo ""
 cd ${WORKSPACE}/${NAME}
+make install
 make testprog
 echo $?
-make install
 
 mkdir -p modules
 (
