@@ -30,10 +30,8 @@ make distclean
 --enable-reentrant \
 --prefix=${SOFT_DIR} \
 
-make install
+make utils
 make shared
-make install
-make testprog
 make install
 mkdir -p modules
 (
@@ -63,6 +61,9 @@ cp modules/${VERSION} ${ASTRONOMY}/${NAME}
 module avail ${NAME}
 
 module add ${NAME}/${VERSION}
+module  list
+echo "what's in ${BZLIB_DIR}/lib ?"
+ls $BZLIB_DIR/lib
 echo "checking testprog"
 which testprog
 echo "running testprog"

@@ -63,4 +63,4 @@ module add ${NAME}/${VERSION}
 echo "LD_LIBRARY_PATH is $LD_LIBRARY_PATH"
 echo "checking where testprog is"
 which testprog
-./testprog
+testprog
