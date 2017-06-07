@@ -22,8 +22,10 @@ echo "is libbz2 in our LD_LIBRARY_PATH"
 echo $LD_LIBRARY_PATH
 echo ""
 cd ${WORKSPACE}/${NAME}
+echo "making install"
 make install
-make testprog
+echo "making testprog"
+LDFLAGS=${LDFLAGS} make testprog
 echo $?
 
 mkdir -p modules
@@ -58,6 +60,7 @@ cp modules/${VERSION} ${ASTRONOMY}/${NAME}
 module avail ${NAME}
 module purge
 module add ci
+module add bzip2
 module add ${NAME}/${VERSION}
 echo "LD_LIBRARY_PATH is $LD_LIBRARY_PATH"
 echo "checking where testprog is"
