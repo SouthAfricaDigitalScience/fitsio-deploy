@@ -24,8 +24,6 @@ echo ""
 cd ${WORKSPACE}/${NAME}
 echo "making install"
 make install
-echo "making testprog"
-LDFLAGS=${LDFLAGS} make testprog
 echo $?
 
 mkdir -p modules

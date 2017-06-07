@@ -63,6 +63,7 @@ cd $WORKSPACE/$NAME
 --with-bzip2=${BZLIB_DIR}
 
 make
+make utils
 make shared
 echo "is the statically-linked library present ?"
 find . -name "*.a"
