@@ -41,7 +41,7 @@ module avail ${NAME}
 module add astronomy/${NAME}/${VERSION}
 
 echo "checking the installed version"
-echo "test program should be sitting in " ${WORKSPACE}/${NAME} 
+echo "test program should be sitting in if all worked" ${WORKSPACE}/${NAME} 
 ls ${WORKSPACE}/$NAME}
 which ${WORKSPACE}/{$NAME}/testprog
 ldd ${WORKSPACE}/{$NAME}/testprog
